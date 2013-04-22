@@ -1,0 +1,2 @@
+SecurImageCaptcha-for-Cotonti
+=============================
