@@ -95,6 +95,6 @@ $img->num_lines       = 4;                                 // how many lines to 
 
 
 
-$img->show($img->show("./backgrounds/".$bgr));  // outputs the image and content headers to the browser
+$img->show("./backgrounds/".$bgr);  // outputs the image and content headers to the browser
 // alternate use:
 // $img->show('/path/to/background_image.jpg');
