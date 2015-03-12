@@ -2,7 +2,6 @@
 /* ====================
 [BEGIN_COT_EXT]
 Hooks=global
-Order=10
 [END_COT_EXT]
 ==================== */
 /**
@@ -13,10 +12,10 @@ Order=10
  */
 defined('COT_CODE') or die('Wrong URL');
 
-require($cfg['plugins_dir']."/captcha/inc/securimage.php");
+require(cot::$cfg['plugins_dir']."/captcha/inc/securimage.php");
 require_once(cot_langfile('captcha'));
 
-$captca_executed = false;
+$captcha_executed = false;
 
 /**
  * Generates captcha
@@ -24,31 +23,30 @@ $captca_executed = false;
  * @todo автозаполняемое поле
  */
 function captcha_generate(){
-    global $cfg, $L, $captca_executed;
+    global $captcha_executed;
 
     $t = new XTemplate(cot_tplfile('captcha', 'plug'));
 
     $t->assign(array(
-        'CAPTCHA_SRC' => $cfg['plugins_dir']."/captcha/inc/imageshow.php?sid=".md5(uniqid(time())),
+        'CAPTCHA_SRC' => cot::$cfg['plugins_dir']."/captcha/inc/imageshow.php?sid=".md5(uniqid(time())),
     ));
 
     $t->parse();
 
     // Captcha Salt
-    if(!$captca_executed){
+    if(!$captcha_executed){
         $tmp = securimageSalt();
         $tmp = "$('input[name=\"rvname\"]').val('{$tmp}')";
-        cot_rc_embed_footer($tmp);
-        $captca_executed = true;
+        Resources::embedFooter($tmp);
+        $captcha_executed = true;
     }
 
     return $t->text();
 }
 
 function captcha_validate($verify = 0){
-    global $cfg, $L;
     // Check anti-hammer
-    if(time() - $_SESSION['captcha_time'] > $cfg['plugin']['captcha']['delay']) {
+    if(time() - $_SESSION['captcha_time'] > cot::$cfg['plugin']['captcha']['delay']) {
         // Check salt
         $empty = cot_import('rvtown','P','TXT');
         $salt = cot_import('rvname','P','TXT');
@@ -64,9 +62,7 @@ function captcha_validate($verify = 0){
 }
 
 function securimageSalt(){
-    global $cfg;
-
-    $tmp = $cfg['mainurl'].$cfg['site_id'].$cfg['secret_key'];
+    $tmp = cot::$cfg['mainurl'].cot::$cfg['site_id'].cot::$cfg['secret_key'];
     return mb_substr(md5($tmp), 0, 10);
 
 }

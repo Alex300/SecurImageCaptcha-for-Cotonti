@@ -17,6 +17,6 @@ if ($cfg['captchamain'] == 'captcha'){
 
     if (!cot_captcha_validate($rverify))
     {
-        cot_error($L['captcha_verify_failed'], 'rverify');
+        cot_error($L['captcha_verification_failed'], 'rverify');
     }
 }
