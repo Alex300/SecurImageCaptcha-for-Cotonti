@@ -50,7 +50,7 @@ function captcha_validate($verify = 0){
         // Check salt
         $empty = cot_import('rvtown','P','TXT');
         $salt = cot_import('rvname','P','TXT');
-        if (empty($empty) && $salt = securimageSalt()){
+        if (empty($empty) && $salt == securimageSalt()){
             if($_SESSION['captcha_count'] == 0){
                 $image = new Securimage();
                 return (bool) $image->check($verify);
