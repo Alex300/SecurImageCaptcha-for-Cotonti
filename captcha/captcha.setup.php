@@ -4,11 +4,11 @@
 Code=captcha
 Name=SecurImage CAPTCHA
 Category=security-authentication
-Description=Securimage CAPTCHA. Protects your site from spam bots with image caphtca. Requires JavaScript.
+Description=Securimage CAPTCHA. Protects your site from spam bots with image captcha. Requires JavaScript.
 Version=2.0-3.5
 Date=2013-04-18
 Author=Alex
-Copyright=Portal30 Studio http://portal30.ru, Drew Phillips http://www.phpcaptcha.org
+Copyright=(c) 2009-2017 Portal30 Studio http://portal30.ru, Drew Phillips http://www.phpcaptcha.org
 Notes=The Securimage is made by Drew Phillips.  http://www.phpcaptcha.org
 SQL=
 Auth_guests=R
@@ -27,8 +27,5 @@ attempts=02:string::0:Max captcha attempts per session (0 for unlimited)
  * SecurImage CAPTCHA
  * @package security-authentication
  * @author Alex - Studio Portal30
- * @copyright 2009-2013 Portal30 http://portal30.ru
+ * @copyright 2009-2017 Portal30 http://portal30.ru
  */
-
-
-
