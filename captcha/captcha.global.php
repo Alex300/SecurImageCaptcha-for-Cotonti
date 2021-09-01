@@ -7,8 +7,8 @@ Hooks=global
 /**
  * SecurImage CAPTCHA
  * @package security-authentication
- * @author Alex - Studio Portal30
- * @copyright 2009-2013 Portal30 http://portal30.ru
+ * @author Kalnov Alexey <kalnovalexey@yandex.ru>
+ * @copyright Lily Software https://lily-software.com (ex. Portal30 Studio)
  */
 defined('COT_CODE') or die('Wrong URL');
 
