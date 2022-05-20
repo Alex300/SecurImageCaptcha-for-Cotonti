@@ -72,10 +72,7 @@ $_SESSION['captcha_count'] = 0;
 // You can customize the image by making changes below, some examples are included - remove the "//" to uncomment
 
 $img->ttf_file        = "./".$font;
-if($font == 'anorexia.ttf'){
-    // нет 8-ки
-    $img->charset        = 'ABCDEFGHKLMNPRSTUVWYZabcdefghklmnprstuvwyz2345679';
-}
+
 //$img->ttf_file        = './Quiff.ttf';
 //$img->captcha_type    = Securimage::SI_CAPTCHA_MATHEMATIC; // show a simple math problem instead of text
 $img->case_sensitive  = false;                               // true to use case sensitve codes - not recommended
@@ -84,7 +81,7 @@ $img->case_sensitive  = false;                               // true to use case
 //$img->image_height    = 70;                                  // height in pixels of the image
 //$img->image_width     = intval($img->image_height * M_E);    // a good formula for image size based on the height
 
-//$img->perturbation    = .75;                               // 1.0 = high distortion, higher numbers = more distortion
+$img->perturbation    = .55;                               // 1.0 = high distortion, higher numbers = more distortion
 //$img->image_bg_color  = new Securimage_Color("#0099CC");   // image background color
 //$img->text_color      = new Securimage_Color("#EAEAEA");   // captcha text color
 $img->num_lines       = 4;                                   // how many lines to draw over the image
@@ -93,6 +90,14 @@ $img->num_lines       = 4;                                   // how many lines t
 //$img->signature_color = new Securimage_Color(rand(0, 64),
 //                                             rand(64, 128),
 //                                             rand(128, 255));  // random signature color
+
+//$img->noise_level = 2;  // The level of noise (random dots) to place on the image, 0-10
+
+if($font == 'anorexia.ttf'){
+    // нет 8-ки
+    $img->charset        = 'ABCDEFGHKLMNPRSTUVWYZabcdefghklmnprstuvwyz2345679';
+    $img->perturbation    = .10;
+}
 
 // see securimage.php for more options that can be set
 
