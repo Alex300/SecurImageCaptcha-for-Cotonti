@@ -1,4 +1,6 @@
-SecurImageCaptcha-for-Cotonti
-=============================
+SecurImage Captcha plugin for Cotonti
+=====================================
 
-Russian documentation: http://lily-software.com/sozdanie-internet-sajtov/free-scripts/cotonti-securImage-captcha
+Cotonti CMF: https://www.cotonti.com/
+
+Russian documentation: https://lily-software.com/free-scripts/cotonti-securImage-captcha
