@@ -4,11 +4,11 @@
 Code=captcha
 Name=SecurImage CAPTCHA
 Category=security-authentication
-Description=Securimage CAPTCHA. Protects your site from spam bots with image captcha. Requires JavaScript.
-Version=2.1-3.6.8
-Date=Sep 01, 2021
+Description=SecurImage CAPTCHA. Protects your site from spam bots with image captcha. Requires JavaScript.
+Version=2.2-3.6.8
+Date=2024-03-27
 Author=Alex
-Copyright=© 2009-2021 Lily Software https://lily-software.com (ex. Portal30 Studio), Drew Phillips http://www.phpcaptcha.org
+Copyright=© 2009-2024 Lily Software https://lily-software.com (ex. Portal30 Studio), Drew Phillips http://www.phpcaptcha.org
 Notes=The Securimage is made by Drew Phillips.  http://www.phpcaptcha.org
 SQL=
 Auth_guests=R
@@ -27,5 +27,5 @@ attempts=02:string::0:Max captcha attempts per session (0 for unlimited)
  * SecurImage CAPTCHA
  * @package security-authentication
  * @author Kalnov Alexey <kalnovalexey@yandex.ru>
- * @copyright 2009-2021 Lily Software https://lily-software.com (ex. Portal30 Studio)
+ * @copyright 2009-2024 Lily Software https://lily-software.com (ex. Portal30 Studio)
  */
