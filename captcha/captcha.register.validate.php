@@ -4,19 +4,21 @@
 Hooks=users.register.add.first
 [END_COT_EXT]
 ==================== */
+
+declare(strict_types=1);
+
 /**
- * SecurImage CAPTCHA
- * @package security-authentication
- * @author Alex - Studio Portal30
- * @copyright 2009-2013 Portal30 http://portal30.ru
+ * SecurImage CAPTCHA plugin for Cotonti CMF
+ *
+ * @package SecurImage
+ * @copyright (c) Alexey Kalnov, Lily Software https://lily-software.com
  */
 defined('COT_CODE') or die('Wrong URL');
 
-if ($cfg['captchamain'] == 'captcha'){
-    $rverify = cot_import('rverify', 'P', 'TXT');
+if (Cot::$cfg['captchamain'] == 'captcha') {
+    $rverify = cot_import('rverify', 'P', 'INT');
 
-    if (!cot_captcha_validate($rverify))
-    {
-        cot_error($L['captcha_verification_failed'], 'rverify');
+    if (!cot_captcha_validate($rverify)) {
+        cot_error('captcha_verification_failed', 'rverify');
     }
 }
