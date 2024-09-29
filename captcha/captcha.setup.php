@@ -28,5 +28,6 @@ attempts=02:string::0:Max captcha attempts per session (0 for unlimited)
  *
  * @package SecurImage
  * @copyright (c) Alexey Kalnov, Lily Software https://lily-software.com
+ * @see https://github.com/dapphp/securimage
  */
 

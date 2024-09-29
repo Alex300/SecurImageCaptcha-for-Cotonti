@@ -53,19 +53,23 @@ function captcha_generate(): string
  */
 function captcha_validate($verify = ''): bool
 {
+    $captchaId = cot_import('secur-image-id','P','TXT');
+
+    $removeCaptcha = !empty($captchaId) && !COT_AJAX;
+
     // Check anti-hammer
     if ((time() - $_SESSION['captcha_time']) > cot::$cfg['plugin']['captcha']['delay']) {
         // Check salt
         $empty = cot_import('rvtown','P','TXT');
         $salt = cot_import('rvname','P','TXT');
-        $captchaId = cot_import('secur-image-id','P','TXT');
         if (empty($empty) && $salt === securimageSalt()) {
             if ($_SESSION['captcha_count'] == 0) {
                 $image = new Securimage();
-                return (bool) $image->check($verify, $captchaId, true);
+                return (bool) $image->check($verify, $captchaId, $removeCaptcha);
             }
         }
     }
+
     $_SESSION['captcha_count']++;
     return false;
 }
