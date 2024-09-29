@@ -67,7 +67,7 @@ $img->num_lines       = 4;                                   // how many lines t
 if ($font === 'anorexia.ttf'){
     // нет 8-ки
     $img->charset = 'ABCDEFGHKLMNPRSTUVWYZabcdefghklmnprstuvwyz2345679';
-    $img->perturbation = .10;
+    $img->perturbation = .5;
 }
 
 // see securimage.php for more options that can be set

@@ -23,7 +23,6 @@ class SecurImageCaptcha {
         document.addEventListener('click', (event) => {
             if (event.target.classList.contains('secur-image-refresh')) {
                 const captchaId = event.target.dataset.id;
-
                 if (this.#loading[captchaId] !== undefined && this.#loading[captchaId]) {
                     return;
                 }
