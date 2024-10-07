@@ -14,7 +14,7 @@ Cotonti CMF: https://www.cotonti.com/
 
 Plugin pages:
 - https://lily-software.com/free-scripts/cotonti-securImage-captcha
-- Cotonti todo
+- https://www.cotonti.com/extensions/security-authentication/securImage-captcha
 
 ## Opportunities:
 
@@ -34,4 +34,4 @@ To change the image settings (font, size, background image, noises, etc.), edit 
 
 ## Using captchas in your plugins:
 
-Similar to using any other captcha (todo link to documentation).
+[Similar to using any other captcha](https://www.cotonti.com/docs/ext/extensions/using-captcha)
